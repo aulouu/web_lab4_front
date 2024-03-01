@@ -1,0 +1,41 @@
+@media screen and (min-width: 1265px) {
+    .logOutBtn {
+        position: relative;
+        right: 10px;
+        width: 100px !important;
+        height: 40px !important;
+        background-color: #dfd3e3 !important;
+    }
+
+    .logOutBtn:hover {
+        background-color: #c6aec7 !important;
+    }
+}
+
+@media screen and (max-width: 1265px) and (min-width: 806px){
+    .logOutBtn {
+        position: relative;
+        right: 10px;
+        width: fit-content !important;
+        height: fit-content !important;
+        background-color: #dfd3e3 !important;
+    }
+
+    .logOutBtn:hover {
+        background-color: #c6aec7 !important;
+    }
+}
+
+@media screen and (max-width: 806px) {
+    .logOutBtn {
+        position: relative;
+        left: 15vw;
+        width: fit-content !important;
+        height: fit-content !important;
+        background-color: #dfd3e3 !important;
+    }
+
+    .logOutBtn:hover {
+        background-color: #c6aec7 !important;
+    }
+}

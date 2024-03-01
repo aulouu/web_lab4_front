@@ -1,0 +1,187 @@
+@media screen and (min-width: 1265px) {
+    .inpts {
+        /*border: #dfd3e3 2px solid;*/
+        /*border-radius: 8px;*/
+        font-size: 20px;
+        /*background-color: #fffff4;*/
+        color: darkslategrey;
+        font-family: cursive;
+        /*width: 513px;*/
+        height: 400px;
+        width: 30vw;
+        /*margin-top: 40px;*/
+        margin-top: 10px;
+        /*margin-left: 290px;*/
+        margin-left: 17vw;
+        padding: 10px;
+    }
+
+    .p-button {
+        background-color: #fffff4;
+        border-radius: 8px;
+        border: #dfd3e3 2px solid;
+        text-align: center;
+        /*padding: 0.2em;*/
+        width: 40px;
+        height: auto;
+        font-size: 20px;
+        color: darkslategrey;
+        font-family: cursive;
+        margin: 2px;
+    }
+
+    .p-button:hover {
+        background-color: #c6aec7;
+    }
+
+    .p-highlight {
+        background-color: #dfd3e3;
+    }
+
+    .submitBtn {
+        margin-top: 40px;
+        margin-right: 10px;
+        font-size: 20px;
+        height: 40px;
+        background-color: #dfd3e3;
+        width: 90px;
+    }
+
+    .inputText {
+        border: #dfd3e3 2px solid;
+        border-radius: 8px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 10%;
+        height: 40px;
+        width: 240px;
+        color: darkslategrey;
+        font-family: cursive;
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 1265px) and (min-width: 806px){
+    .inpts {
+        /*border: #dfd3e3 2px solid;*/
+        /*border-radius: 8px;*/
+        font-size: 20px;
+        /*background-color: #fffff4;*/
+        color: darkslategrey;
+        font-family: cursive;
+        width: 56vw;
+
+        height: 400px;
+        margin-top: 1vh;
+        margin-left: 10vw;
+        padding: 10px;
+    }
+
+    .p-button {
+        background-color: #fffff4;
+        border-radius: 8px;
+        border: #dfd3e3 2px solid;
+        text-align: center;
+        /*padding: 0.2em;*/
+        width: 40px;
+        height: auto;
+        font-size: 20px;
+        color: darkslategrey;
+        font-family: cursive;
+        margin: 2px;
+    }
+
+    .p-button:hover {
+        background-color: #c6aec7;
+    }
+
+    .p-highlight {
+        background-color: #dfd3e3;
+    }
+
+    .submitBtn {
+        margin-top: 40px;
+        margin-right: 10px;
+        font-size: 20px;
+        height: 40px;
+        background-color: #dfd3e3;
+        width: 90px;
+    }
+
+    .inputText {
+        border: #dfd3e3 2px solid;
+        border-radius: 8px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 10%;
+        height: 40px;
+        width: 240px;
+        color: darkslategrey;
+        font-family: cursive;
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-width: 806px) {
+    .inpts {
+        /*border: #dfd3e3 2px solid;*/
+        /*border-radius: 8px;*/
+        font-size: 20px;
+        /*background-color: #fffff4;*/
+        color: darkslategrey;
+        font-family: cursive;
+        /*width: 70vw;*/
+        width: 400px;
+        height: 400px;
+        margin-top: 1vh;
+        margin-left: calc(50vw - 200px);
+        padding: 10px;
+        padding-left: 20px;
+    }
+
+    .submitBtn {
+        margin-top: 40px;
+        margin-right: 10px;
+        font-size: 20px;
+        height: 40px;
+        background-color: #dfd3e3;
+        width: 90px;
+    }
+
+    .p-button {
+        background-color: #fffff4;
+        border-radius: 8px;
+        border: #dfd3e3 2px solid;
+        text-align: center;
+        /*padding: 0.2em;*/
+        width: 40px;
+        height: auto;
+        font-size: 20px;
+        color: darkslategrey;
+        font-family: cursive;
+        margin: 2px;
+    }
+
+    .p-button:hover {
+        background-color: #c6aec7;
+    }
+
+    .p-highlight {
+        background-color: #dfd3e3;
+    }
+
+    .inputText {
+        border: #dfd3e3 2px solid;
+        border-radius: 8px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 10%;
+        height: 40px;
+        width: 240px;
+        color: darkslategrey;
+        font-family: cursive;
+        font-size: 20px;
+    }
+}

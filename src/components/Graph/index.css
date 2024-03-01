@@ -1,0 +1,35 @@
+@media screen and (min-width: 1265px) {
+    canvas {
+        background-color: #fffff4;
+        padding: 10px;
+        border-radius: 8px;
+        border: #dfd3e3 2px solid;
+        position: relative;
+        left: 15vw;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 1265px) and (min-width: 806px){
+    canvas {
+        background-color: #fffff4;
+        padding: 10px;
+        border-radius: 8px;
+        border: #dfd3e3 2px solid;
+        position: relative;
+        left: 9vw;
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 806px) {
+    canvas {
+        background-color: #fffff4;
+        padding: 10px;
+        border-radius: 8px;
+        border: #dfd3e3 2px solid;
+        position: relative;
+        left: calc(50vw - 200px);
+        margin-top: 40px;
+    }
+}
