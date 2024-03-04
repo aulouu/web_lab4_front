@@ -23,9 +23,18 @@ function Inputs() {
             .then(r => context?.setDots(r))
     }, [])
 
-    let validateX = (x: string) => Number(x) <= 4 && Number(x) >= -4;
-    let validateY = (y: string) => Number(y) <= 5 && Number(y) >= -3;
-    let validateR = (r: string) => Number(r) <= 4 && Number(r) >= 0;
+    let validateX = (x: string) => {
+        const xFloat = parseFloat(x.replace(',', '.'));
+        return xFloat <= 5 && xFloat >= -5;
+    }
+    let validateY = (y: string) => {
+        const yFloat = parseFloat(y.replace(',', '.'));
+        return yFloat <= 3 && yFloat >= -3;
+    }
+    let validateR = (r: string) => {
+        const rFloat = parseFloat(r.replace(',', '.'));
+        return rFloat <= 5 && rFloat >= 0;
+    }
 
     function parseFormSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
@@ -38,9 +47,12 @@ function Inputs() {
             return
         }
         let formData = new FormData();
-        formData.append("x", context.getX.toString())
-        formData.append("y", context.getY.toString())
-        formData.append("r", context.getR.toString())
+        const x = parseFloat(context.getX.replace(',', '.'));
+        const y = parseFloat(context.getY.replace(',', '.'));
+        const r = parseFloat(context.getR.replace(',', '.'));
+        formData.append("x", x.toString())
+        formData.append("y", y.toString())
+        formData.append("r", r.toString())
         fetch("/api/dots", {
             method: "POST",
             headers: {"Authorization": "Basic " + btoa(getLogin(AuthorizationStore.getState()) + ":" + getPassword(AuthorizationStore.getState()))},
@@ -57,36 +69,35 @@ function Inputs() {
             .catch(e => toast.error(e.message));
     }
 
-    function sendClear(){
-        fetch("/api/dots", {
-            method: "DELETE",
-            headers: {"Authorization": "Basic " + btoa(getLogin(AuthorizationStore.getState()) + ":" + getPassword(AuthorizationStore.getState()))},
-        })
-            .then(r => {
-                if (r.ok) {
-                    context?.setDots([])
-                }
-            })
-    }
-
     if (!context) return (<></>);
     return (
         <form className="inpts" onSubmit={parseFormSubmit}>
             <div>
                 <label>X:</label>
-                <InputText className="inputText" value={context.getX} onChange={(e : any) => context.setX(e.target.value)}/>
+                <InputText className="inputText" aria-describedby="x-help" value={context.getX}
+                           onChange={(e: any) => context.setX(e.target.value)}/>
+                <small id="x-help">
+                    Enter X from -5 to 5.
+                </small>
             </div>
             <div>
                 <label>Y:</label>
-                <InputText className="inputText" value={context.getY} onChange={(e : any) => context.setY(e.target.value)}/>
+                <InputText className="inputText" aria-describedby="y-help" value={context.getY}
+                           onChange={(e: any) => context.setY(e.target.value)}/>
+                <small id="y-help">
+                    Enter Y from -3 to 3.
+                </small>
             </div>
             <div>
                 <label>R:</label>
-                <InputText className="inputText" value={context.getR} onChange={(e : any) => context.setR(e.target.value)}/>
+                <InputText className="inputText" aria-describedby="r-help" value={context.getR}
+                           onChange={(e: any) => context.setR(e.target.value)}/>
+                <small id="r-help">
+                    Enter R from 0 to 5.
+                </small>
             </div>
             <div>
                 <Button className="submitBtn" type="submit" label="Submit"/>
-                <Button className="submitBtn" type="reset" label="Clear" onClick={sendClear}/>
             </div>
         </form>
     );
