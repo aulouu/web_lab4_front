@@ -10,18 +10,17 @@ import {Toaster} from "react-hot-toast";
 import {AuthorizationStore} from "./redux/authorizationStore";
 import MainPage from "./views/MainPage";
 
-const router = createBrowserRouter(
-    [
+const router = createBrowserRouter([{
+    path: "/~s373317/",
+    children: [{
+        index: true,
+        element: <LoginPage/>
+    },
         {
-            path: "/",
-            element: <LoginPage/>
-        },
-        {
-            path: "/mainPage",
+            path: "mainPage",
             element: <MainPage/>
-        }
-    ]
-)
+        }]
+}]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
