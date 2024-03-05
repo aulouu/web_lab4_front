@@ -7,12 +7,13 @@ import {getPassword} from "../../redux/password";
 import toast from "react-hot-toast";
 import {DotsFormContext} from "./Context";
 import {InputText} from "primereact/inputtext";
+import {baseURL} from "../../config";
 
 function Inputs() {
     const context = useContext(DotsFormContext);
 
     useEffect(() => {
-        fetch("/api/dots", {
+        fetch(baseURL + "/api/dots", {
             method: "GET",
             headers: {
                 "Authorization": "Basic " + btoa(getLogin(AuthorizationStore.getState()) + ":"
@@ -53,7 +54,7 @@ function Inputs() {
         formData.append("x", x.toString())
         formData.append("y", y.toString())
         formData.append("r", r.toString())
-        fetch("/api/dots", {
+        fetch(baseURL + "/api/dots", {
             method: "POST",
             headers: {"Authorization": "Basic " + btoa(getLogin(AuthorizationStore.getState()) + ":" + getPassword(AuthorizationStore.getState()))},
             body: formData

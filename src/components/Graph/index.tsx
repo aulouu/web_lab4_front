@@ -6,6 +6,7 @@ import {AuthorizationStore} from "../../redux/authorizationStore";
 import {getLogin} from "../../redux/login";
 import {getPassword} from "../../redux/password";
 import toast from "react-hot-toast";
+import {baseURL} from "../../config";
 
 function Graph({width, height}: {width: number, height: number}) {
     const context = useContext(DotsFormContext);
@@ -16,7 +17,7 @@ function Graph({width, height}: {width: number, height: number}) {
         formData.append("x", x.toFixed(2))
         formData.append("y", y.toFixed(2))
         formData.append("r", r.toFixed(2))
-        fetch("/api/dots", {
+        fetch(baseURL + "/api/dots", {
             method: "POST",
             headers: {"Authorization": "Basic " + btoa(getLogin(AuthorizationStore.getState()) + ":" + getPassword(AuthorizationStore.getState()))},
             body: formData
@@ -52,7 +53,7 @@ function Graph({width, height}: {width: number, height: number}) {
         formData.append("x", x.toFixed(2))
         formData.append("y", y.toFixed(2))
         formData.append("r", context.getR.toString())
-        fetch("/api/dots", {
+        fetch(baseURL + "/api/dots", {
             method: "POST",
             headers: {"Authorization": "Basic " + btoa(getLogin(AuthorizationStore.getState()) + ":" + getPassword(AuthorizationStore.getState()))},
             body: formData

@@ -9,6 +9,7 @@ import { Button } from 'primereact/button';
 import toast from "react-hot-toast";
 import {useNavigate} from "react-router-dom";
 import './index.css';
+import {baseURL} from "../../config";
 
 function LoginForm() {
     const dispatch = useAppDispatch();
@@ -27,7 +28,7 @@ function LoginForm() {
         let formData = new FormData();
         formData.append('login', login.toString());
         formData.append('password', password.toString());
-        fetch("/api/login", {
+        fetch(baseURL + "/api/login", {
             method: 'POST',
             body: formData
         })
@@ -54,7 +55,7 @@ function LoginForm() {
         let formData = new FormData();
         formData.append('login', login.toString());
         formData.append('password', password.toString());
-        fetch("/api/register",{
+        fetch(baseURL + "/api/register",{
             method: 'POST',
             body: formData
         })
