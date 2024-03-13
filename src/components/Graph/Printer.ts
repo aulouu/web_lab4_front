@@ -148,7 +148,7 @@ class Printer{
         this.ctx.fillStyle = success
             ? "#36f57f"
             : "#ff2400";
-        const points = 10; // 12
+        const points = 12;
         const pixels = this.SIZE / points;
         this.ctx.beginPath();
         this.ctx.arc(
